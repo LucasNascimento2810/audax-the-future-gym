@@ -84,7 +84,7 @@ const PlansSection = () => {
               </ul>
 
               <a
-                href="https://www.instagram.com/audaxgymcascavel"
+                href={`https://wa.me/554599000171?text=${encodeURIComponent(`Olá! Tenho interesse no plano *${plan.name}* de R$${plan.price},${plan.cents}/mês da Audax Gym. Gostaria de mais informações!`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block text-center py-3 rounded-lg font-semibold tracking-wide transition-all ${

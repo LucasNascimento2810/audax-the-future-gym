@@ -64,7 +64,7 @@ const ContactSection = () => {
 
           <div className="rounded-2xl overflow-hidden border border-border h-full min-h-[350px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.0!2d-53.46!3d-24.96!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU3JzM2LjAiUyA1M8KwMjcnMzYuMCJX!5e0!3m2!1spt-BR!2sbr!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.5!2d-53.4551!3d-24.9575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d5a1b2c3d4e5%3A0x0!2sRua%20Fortaleza%2C%202850%20-%20Cascavel%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1"
               width="100%"
               height="100%"
               style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
