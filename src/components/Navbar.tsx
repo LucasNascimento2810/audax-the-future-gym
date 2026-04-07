@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram } from "lucide-react";
+import BrandLogo from "./BrandLogo";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -27,14 +28,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <a href="#inicio" className="flex items-center gap-2">
-          <div className="flex items-center">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-              <path d="M8 28L16 8L20 18L24 8L32 28" stroke="hsl(30 100% 50%)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <span className="font-display text-2xl tracking-wider text-foreground ml-1">AUDAX</span>
-            <span className="text-muted-foreground text-xs tracking-[0.3em] ml-2 mt-1">GYM</span>
-          </div>
+        <a href="#inicio" className="flex items-center gap-2" aria-label="Ir para o início">
+          <BrandLogo iconClassName="h-8 sm:h-9 w-auto" textSizeClassName="text-xl sm:text-2xl" subtextSizeClassName="text-[10px] sm:text-xs" />
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
