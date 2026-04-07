@@ -59,8 +59,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Bebas Neue', 'sans-serif'],
+        sans: ['Roboto', 'sans-serif'],
+        display: ['Oswald', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

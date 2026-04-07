@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/optimized/hero-bg.jpg";
 import { useEffect, useState } from "react";
 
 const HeroSection = () => {
@@ -36,7 +36,7 @@ const HeroSection = () => {
           </span>
         </div>
 
-        <h1 className={`font-display text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] leading-[0.85] tracking-tight transition-all duration-1000 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+        <h1 className={`font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] leading-[0.85] tracking-tight transition-all duration-1000 delay-500 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
           <span className="text-foreground">AUDAX</span>
           <br />
           <span className="text-gradient">GYM</span>

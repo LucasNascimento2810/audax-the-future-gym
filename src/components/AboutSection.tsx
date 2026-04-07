@@ -1,5 +1,5 @@
 import { Dumbbell, Users, Clock, Trophy } from "lucide-react";
-import gymTraining from "@/assets/gym-training.jpg";
+import gymTraining from "@/assets/optimized/gym-training.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useCountUp } from "@/hooks/useCountUp";
 

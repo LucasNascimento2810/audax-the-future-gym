@@ -1,6 +1,6 @@
-import gymSquat from "@/assets/gym-squat.jpg";
-import gymRunning from "@/assets/gym-running.jpg";
-import gymTraining from "@/assets/gym-training.jpg";
+import gymSquat from "@/assets/optimized/gym-squat.jpg";
+import gymRunning from "@/assets/optimized/gym-running.jpg";
+import gymTraining from "@/assets/optimized/gym-training.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const images = [

@@ -1,4 +1,4 @@
-import logoImage from "@/assets/audax-logo.png";
+import logoImage from "@/assets/optimized/audax-logo.png";
 
 type BrandLogoProps = {
   iconClassName?: string;
