@@ -44,17 +44,22 @@ const ContactSection = () => {
               </div>
             </a>
 
-            <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/40 transition-colors">
+            <a
+              href="https://wa.me/554599000171?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Audax%20Gym!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-card border border-border rounded-2xl p-8 hover:border-primary/40 transition-colors group"
+            >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Phone className="text-primary" size={22} />
                 </div>
                 <div>
                   <p className="text-foreground font-semibold text-lg mb-1">WhatsApp</p>
-                  <p className="text-muted-foreground">Entre em contato pelo Instagram</p>
+                  <p className="text-muted-foreground group-hover:text-primary transition-colors">(45) 99000-0171</p>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <div className="rounded-2xl overflow-hidden border border-border h-full min-h-[350px]">
