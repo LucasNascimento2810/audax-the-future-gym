@@ -18,7 +18,7 @@ const AboutSection = () => {
             <img
               src={gymTraining}
               alt="Treino na Audax Gym"
-              className="relative rounded-2xl w-full h-[500px] object-cover shadow-2xl"
+              className="relative rounded-2xl w-full object-contain shadow-2xl"
             />
             <div className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-6 shadow-xl">
               <p className="font-display text-4xl text-primary">+1000</p>
