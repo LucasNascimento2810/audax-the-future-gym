@@ -1,4 +1,5 @@
 import { Check, Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const plans = [
   {
@@ -36,12 +37,14 @@ const plans = [
 ];
 
 const PlansSection = () => {
+  const { ref, isVisible } = useScrollReveal(0.1);
+
   return (
     <section id="planos" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+      <div className="container mx-auto px-6 relative z-10" ref={ref}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Planos</span>
           <h2 className="font-display text-5xl md:text-7xl text-foreground mt-3">
             CONHEÇA NOSSOS<br />
@@ -50,14 +53,15 @@ const PlansSection = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {plans.map((plan) => (
+          {plans.map((plan, i) => (
             <div
               key={plan.name}
               className={`relative rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 group ${
                 plan.popular
-                  ? "bg-card border-2 border-primary glow-orange"
-                  : "bg-card border border-border hover:border-primary/40"
-              }`}
+                  ? "bg-card/80 backdrop-blur-xl border-2 border-primary glow-orange"
+                  : "bg-card/60 backdrop-blur-lg border border-border hover:border-primary/40"
+              } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
+              style={{ transitionDelay: `${300 + i * 150}ms` }}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold tracking-wider flex items-center gap-1">

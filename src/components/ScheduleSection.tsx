@@ -1,20 +1,28 @@
 import { Clock } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ScheduleSection = () => {
+  const { ref, isVisible } = useScrollReveal(0.2);
+
   return (
     <section id="horarios" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10" ref={ref}>
         <div className="max-w-2xl mx-auto text-center">
-          <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Horários</span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-3 mb-12">
-            HORÁRIO DE<br />
-            <span className="text-gradient">FUNCIONAMENTO</span>
-          </h2>
+          <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Horários</span>
+            <h2 className="font-display text-5xl md:text-7xl text-foreground mt-3 mb-12">
+              HORÁRIO DE<br />
+              <span className="text-gradient">FUNCIONAMENTO</span>
+            </h2>
+          </div>
 
           <div className="space-y-6">
-            <div className="bg-card border border-border rounded-2xl p-8 flex items-center justify-between hover:border-primary/40 transition-colors">
+            <div
+              className={`bg-card/60 backdrop-blur-lg border border-border rounded-2xl p-8 flex items-center justify-between hover:border-primary/40 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: "300ms" }}
+            >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Clock className="text-primary" size={22} />
@@ -29,7 +37,10 @@ const ScheduleSection = () => {
               </p>
             </div>
 
-            <div className="bg-card border border-border rounded-2xl p-8 flex items-center justify-between hover:border-primary/40 transition-colors">
+            <div
+              className={`bg-card/60 backdrop-blur-lg border border-border rounded-2xl p-8 flex items-center justify-between hover:border-primary/40 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: "500ms" }}
+            >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Clock className="text-primary" size={22} />

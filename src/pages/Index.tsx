@@ -6,6 +6,7 @@ import StructureSection from "@/components/StructureSection";
 import ScheduleSection from "@/components/ScheduleSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <ScheduleSection />
       <ContactSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
