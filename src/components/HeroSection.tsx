@@ -1,0 +1,51 @@
+import { ChevronDown } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
+
+const HeroSection = () => {
+  return (
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={heroBg} alt="Audax Gym" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      </div>
+
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px] animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/8 blur-[100px] animate-float" style={{ animationDelay: "3s" }} />
+
+      <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="animate-slide-up" style={{ animationDelay: "0.2s", opacity: 0 }}>
+          <span className="inline-block text-primary text-sm tracking-[0.4em] uppercase font-medium mb-6 border border-primary/30 px-4 py-1.5 rounded-full">
+            Cascavel — PR
+          </span>
+        </div>
+
+        <h1 className="font-display text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] leading-[0.85] tracking-tight animate-slide-up" style={{ animationDelay: "0.4s", opacity: 0 }}>
+          <span className="text-foreground">AUDAX</span>
+          <br />
+          <span className="text-gradient">GYM</span>
+        </h1>
+
+        <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mt-8 leading-relaxed animate-slide-up" style={{ animationDelay: "0.6s", opacity: 0 }}>
+          Supere seus limites. Treine com estrutura de alto padrão e acompanhamento profissional.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-slide-up" style={{ animationDelay: "0.8s", opacity: 0 }}>
+          <a href="#planos" className="bg-gradient-primary text-primary-foreground px-10 py-4 rounded-lg font-semibold text-lg tracking-wide hover:opacity-90 transition-all glow-orange">
+            VER PLANOS
+          </a>
+          <a href="#sobre" className="border border-border text-foreground px-10 py-4 rounded-lg font-semibold text-lg tracking-wide hover:border-primary/50 transition-all">
+            CONHEÇA
+          </a>
+        </div>
+      </div>
+
+      <a href="#sobre" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground animate-float">
+        <ChevronDown size={28} />
+      </a>
+    </section>
+  );
+};
+
+export default HeroSection;
