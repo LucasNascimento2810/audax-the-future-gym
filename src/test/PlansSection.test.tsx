@@ -4,8 +4,7 @@ import PlansSection from '../components/PlansSection';
 describe('PlansSection', () => {
   it('renders the section title', () => {
     render(<PlansSection />);
-    expect(screen.getByText('CONHEÇA NOSSOS')).toBeInTheDocument();
-    expect(screen.getByText('PLANOS')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /conheça nossos planos/i })).toBeInTheDocument();
   });
 
   it('renders plan names', () => {

@@ -15,7 +15,8 @@ const HeroSection = () => {
         <img
           src={heroBg}
           alt="Audax Gym"
-          className={`w-full h-full object-cover transition-transform duration-[2000ms] ${loaded ? "scale-100" : "scale-110"}`}
+          className={`w-full h-full object-cover transition-transform ${loaded ? "scale-100" : "scale-110"}`}
+          style={{ transitionDuration: "2000ms" }}
         />
         <div className="absolute inset-0 bg-background/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />

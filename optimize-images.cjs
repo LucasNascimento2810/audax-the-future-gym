@@ -1,8 +1,14 @@
-import imagemin from 'imagemin';
-import imageminMozjpeg from 'imagemin-mozjpeg';
-import imageminPngquant from 'imagemin-pngquant';
-
 (async () => {
+  const [
+    { default: imagemin },
+    { default: imageminMozjpeg },
+    { default: imageminPngquant },
+  ] = await Promise.all([
+    import("imagemin"),
+    import("imagemin-mozjpeg"),
+    import("imagemin-pngquant"),
+  ]);
+
   const files = await imagemin(['src/assets/*.{jpg,png}'], {
     destination: 'src/assets/optimized',
     plugins: [
