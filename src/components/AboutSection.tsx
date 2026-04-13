@@ -42,13 +42,13 @@ const AboutSection = () => {
               <span className="text-gradient">DA AUDAX</span>
             </h2>
             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              A Academia Audax está em Cascavel - PR, na Rua Fortaleza, 2850. Nesta
-              página, você encontra uma apresentação mais direta da academia, com
-              estrutura, planos, horários e contato organizados de forma simples.
+              A Academia Audax é referência em Cascavel - PR, oferecendo um espaço
+              moderno e completo para quem busca qualidade de vida e resultados reais
+              nos treinos.
             </p>
             <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-              Se quiser seguir para o próximo passo, o WhatsApp é o caminho mais
-              rápido para tirar dúvidas e receber mais informações sobre os planos.
+              Com equipamentos de ponta, profissionais qualificados e um ambiente
+              motivador, a Audax é o lugar certo para transformar seus objetivos em conquistas.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3">
@@ -106,11 +106,11 @@ const AboutSection = () => {
                 Próximo passo
               </p>
               <p className="mt-3 font-display text-3xl text-foreground">
-                Planos, horários e contato em um só lugar
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                A navegação foi organizada para facilitar a leitura e levar você ao
-                WhatsApp com mais rapidez.
+                   Seu próximo treino começa aqui
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Venha conhecer a estrutura pessoalmente e descubra por que a Audax
+                  é a escolha de quem leva o treino a sério.
               </p>
             </div>
           </div>

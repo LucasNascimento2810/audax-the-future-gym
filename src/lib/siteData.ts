@@ -76,21 +76,21 @@ export const faqItems = [
   {
     question: "Quais planos estão disponíveis?",
     answer:
-      "A página apresenta os planos mensal, trimestral, semestral e anual. Para confirmar os detalhes de cada opção, o melhor caminho é falar com a equipe pelo WhatsApp.",
+      "Temos planos mensal, trimestral, semestral e anual. Cada um com condições especiais de pagamento. Fale com a equipe pelo WhatsApp para saber todos os detalhes.",
   },
   {
     question: "Como entrar em contato com a academia?",
     answer:
-      "Você pode usar os botões de WhatsApp distribuídos pela página ou acessar o Instagram oficial da Audax.",
+      "O jeito mais rápido é pelo WhatsApp no número (45) 99000-0171. Você também pode nos encontrar no Instagram @audaxgymcascavel ou visitar a academia pessoalmente.",
   },
   {
     question: "Onde fica a Academia Audax?",
-    answer: "A Academia Audax fica na Rua Fortaleza, 2850, em Cascavel - PR.",
+    answer: "Estamos na Rua Fortaleza, 2850, em Cascavel - PR. Venha nos visitar!",
   },
   {
     question: "Quero saber mais antes de me matricular.",
     answer:
-      "Use o WhatsApp para tirar dúvidas e receber mais informações sobre os planos, horários e contato da academia.",
+      "Sem problemas! Chame no WhatsApp que nossa equipe vai te explicar tudo sobre os planos, horários, estrutura e tirar todas as suas dúvidas.",
   },
 ] as const;
 

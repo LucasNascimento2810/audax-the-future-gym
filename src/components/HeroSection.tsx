@@ -87,8 +87,8 @@ const HeroSection = () => {
                 loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Conheça a Academia Audax, veja a estrutura, confira os planos disponíveis e
-              fale com a equipe pelo WhatsApp para receber mais informações.
+              Transforme seu corpo e sua mente com treinos de alta performance.
+              Estrutura completa, equipamentos modernos e uma equipe pronta para te ajudar.
             </p>
 
             <div

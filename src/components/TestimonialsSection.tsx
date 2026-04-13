@@ -46,8 +46,8 @@ const TestimonialsSection = () => {
             <span className="text-gradient">DIZENDO SOBRE A AUDAX</span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Alguns relatos já presentes no projeto ajudam a reforçar a experiência de
-            quem treina na academia.
+            Veja o que nossos alunos falam sobre a experiência de treinar na
+            Academia Audax.
           </p>
         </div>
 

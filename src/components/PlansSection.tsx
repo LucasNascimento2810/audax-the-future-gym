@@ -39,8 +39,8 @@ const PlansSection = () => {
               Atendimento direto
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Para confirmar detalhes e avançar com mais segurança, fale com a equipe
-              pelo WhatsApp em qualquer um dos botões desta seção.
+              Escolheu seu plano? Fale com nossa equipe pelo WhatsApp e
+              comece a treinar o quanto antes!
             </p>
           </div>
         </div>

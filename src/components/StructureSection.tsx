@@ -63,8 +63,8 @@ const StructureSection = () => {
             <span className="text-gradient">A ESTRUTURA</span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Um conjunto de imagens para apresentar melhor a academia, reforçar a
-            estrutura e deixar a navegação mais convincente.
+            Equipamentos modernos, espaço amplo e um ambiente pensado para
+            você treinar com foco e conforto.
           </p>
         </div>
 
