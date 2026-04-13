@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Instagram, Menu, X } from "lucide-react";
 import BrandLogo from "./BrandLogo";
-import { siteData, whatsappDefaultUrl } from "@/lib/siteData";
+import { createWhatsAppLink, siteData } from "@/lib/siteData";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
@@ -12,6 +12,10 @@ const navLinks = [
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ] as const;
+
+const visitLink = createWhatsAppLink(
+  "Olá! Quero agendar uma visita para conhecer a Academia Audax.",
+);
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,25 +29,27 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "border-b border-border bg-background/95 backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+      <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a href="#inicio" className="flex items-center gap-2" aria-label="Ir para o início">
           <BrandLogo
-            iconClassName="h-8 sm:h-9 w-auto"
+            iconClassName="h-8 w-auto sm:h-9"
             textSizeClassName="text-xl sm:text-2xl"
             subtextSizeClassName="text-[10px] sm:text-xs"
           />
         </a>
 
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 tracking-wide uppercase"
+              className="text-sm uppercase tracking-wide text-muted-foreground transition-colors duration-300 hover:text-primary"
             >
               {link.label}
             </a>
@@ -53,24 +59,24 @@ const Navbar = () => {
             href={siteData.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-muted-foreground transition-colors hover:text-primary"
             aria-label="Abrir Instagram da Audax Gym"
           >
             <Instagram size={20} />
           </a>
 
           <a
-            href={whatsappDefaultUrl}
+            href={visitLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-primary text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity"
+            className="rounded-lg bg-gradient-primary px-6 py-2.5 text-sm font-semibold tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
           >
-            FALAR NO WHATSAPP
+            AGENDAR VISITA
           </a>
         </div>
 
         <button
-          className="lg:hidden text-foreground"
+          className="text-foreground lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
@@ -80,27 +86,27 @@ const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <div className="lg:hidden bg-background/98 backdrop-blur-xl border-t border-border animate-slide-up">
-          <div className="container mx-auto py-6 px-6 flex flex-col gap-4">
+        <div className="animate-slide-up border-t border-border bg-background/98 backdrop-blur-xl lg:hidden">
+          <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-foreground text-lg tracking-wide uppercase py-2 border-b border-border/50"
+                className="border-b border-border/50 py-2 text-lg uppercase tracking-wide text-foreground"
               >
                 {link.label}
               </a>
             ))}
 
             <a
-              href={whatsappDefaultUrl}
+              href={visitLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg text-center font-semibold tracking-wide mt-2"
+              className="mt-2 rounded-lg bg-gradient-primary px-6 py-3 text-center font-semibold tracking-wide text-primary-foreground"
             >
-              FALAR NO WHATSAPP
+              AGENDAR VISITA
             </a>
           </div>
         </div>

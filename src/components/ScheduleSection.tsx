@@ -16,17 +16,17 @@ const ScheduleSection = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">
+            <span className="text-primary text-sm font-medium uppercase tracking-[0.3em]">
               Horários
             </span>
-            <h2 className="mt-3 mb-6 font-display text-5xl text-foreground md:text-7xl">
+            <h2 className="mb-6 mt-3 font-display text-5xl text-foreground md:text-7xl">
               HORÁRIOS DE
               <br />
               <span className="text-gradient">FUNCIONAMENTO</span>
             </h2>
             <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
-              Confira os horários da academia e use o WhatsApp caso queira receber
-              mais informações.
+              A Audax tem horário amplo para facilitar sua rotina. Se quiser confirmar visita,
+              matrícula ou tirar dúvidas sobre os planos, fale com a equipe no WhatsApp.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ const ScheduleSection = () => {
             style={{ transitionDelay: "650ms" }}
           >
             <MessageCircle size={18} />
-            Tirar dúvidas no WhatsApp
+            Consultar horários e matrícula
           </a>
         </div>
       </div>

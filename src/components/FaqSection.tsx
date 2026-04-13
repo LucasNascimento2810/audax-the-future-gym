@@ -1,31 +1,31 @@
-import { Plus } from "lucide-react";
-import { faqItems } from "@/lib/siteData";
+import { MessageCircle, Plus } from "lucide-react";
+import { createWhatsAppLink, faqItems } from "@/lib/siteData";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const FaqSection = () => {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section id="faq" className="py-24 md:py-28 relative">
+    <section id="faq" className="relative py-24 md:py-28">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
+      <div className="container relative z-10 mx-auto px-6" ref={ref}>
         <div
           className={`mx-auto max-w-3xl text-center transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">
+          <span className="text-primary text-sm font-medium uppercase tracking-[0.3em]">
             FAQ
           </span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-3">
+          <h2 className="mt-3 font-display text-5xl text-foreground md:text-7xl">
             DÚVIDAS
             <br />
             <span className="text-gradient">MAIS COMUNS</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mt-6">
-            Respostas diretas para ajudar você a encontrar os planos, o contato e a
-            localização da Academia Audax.
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            Respostas rápidas para você entender planos, contato, localização e o que precisa
+            saber antes de começar a treinar na Audax.
           </p>
         </div>
 
@@ -44,11 +44,28 @@ const FaqSection = () => {
                   <Plus size={18} />
                 </span>
               </summary>
-              <p className="px-6 pb-6 text-muted-foreground leading-relaxed">
-                {item.answer}
-              </p>
+              <p className="px-6 pb-6 leading-relaxed text-muted-foreground">{item.answer}</p>
             </details>
           ))}
+        </div>
+
+        <div
+          className={`mx-auto mt-10 flex max-w-4xl justify-center transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ transitionDelay: "650ms" }}
+        >
+          <a
+            href={createWhatsAppLink(
+              "Olá! Ainda tenho dúvidas sobre planos e matrícula na Academia Audax.",
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 font-semibold text-foreground transition-all hover:border-primary/40 hover:text-primary"
+          >
+            <MessageCircle size={18} />
+            Ainda ficou com dúvida?
+          </a>
         </div>
       </div>
     </section>

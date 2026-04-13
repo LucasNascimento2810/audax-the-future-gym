@@ -5,7 +5,7 @@ import { siteData, whatsappDefaultUrl } from "@/lib/siteData";
 const Footer = () => {
   return (
     <footer className="relative border-t border-border py-12">
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-primary/5 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
       <div className="container relative mx-auto px-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <BrandLogo

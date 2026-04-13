@@ -5,8 +5,13 @@ describe("PlansSection", () => {
   it("renders the section title", () => {
     render(<PlansSection />);
     expect(
-      screen.getByRole("heading", { name: /veja os planos disponíveis/i }),
+      screen.getByRole("heading", { name: /escolha o plano ideal para a sua rotina/i }),
     ).toBeInTheDocument();
+  });
+
+  it("renders the featured plan badge", () => {
+    render(<PlansSection />);
+    expect(screen.getByText(/mais vantajoso/i)).toBeInTheDocument();
   });
 
   it("renders the plan names", () => {
@@ -19,6 +24,6 @@ describe("PlansSection", () => {
 
   it("renders a WhatsApp CTA for each plan", () => {
     render(<PlansSection />);
-    expect(screen.getAllByRole("link", { name: /quero saber mais/i })).toHaveLength(4);
+    expect(screen.getAllByRole("link", { name: /quero este plano/i })).toHaveLength(4);
   });
 });

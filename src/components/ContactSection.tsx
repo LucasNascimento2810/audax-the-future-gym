@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  Check,
   Clock3,
   Instagram,
   MapPin,
@@ -8,6 +9,16 @@ import {
 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { createWhatsAppLink, siteData, whatsappDefaultUrl } from "@/lib/siteData";
+
+const visitBenefits = [
+  "Conhecer a estrutura de perto",
+  "Entender qual plano combina com a sua rotina",
+  "Tirar dúvidas diretamente com a equipe",
+] as const;
+
+const visitLink = createWhatsAppLink(
+  "Olá! Quero agendar uma visita para conhecer a Academia Audax.",
+);
 
 const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
@@ -20,17 +31,17 @@ const ContactSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">
-            Contato
+          <span className="text-primary text-sm font-medium uppercase tracking-[0.3em]">
+            Contato e matrícula
           </span>
           <h2 className="mt-3 font-display text-5xl text-foreground md:text-7xl">
-            FALE COM A
+            AGENDE SUA VISITA
             <br />
-            <span className="text-gradient">ACADEMIA AUDAX</span>
+            <span className="text-gradient">E CONHEÇA A AUDAX DE PERTO</span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Entre em contato pelo WhatsApp, siga nosso Instagram ou visite
-            a academia pessoalmente. Estamos prontos para te receber!
+            Se você quer ver a estrutura, entender os planos e falar com a equipe antes de se
+            matricular, o WhatsApp é o caminho mais rápido para começar.
           </p>
         </div>
 
@@ -42,78 +53,104 @@ const ContactSection = () => {
           >
             <div className="rounded-[2rem] border border-border bg-card/70 p-8 backdrop-blur-xl transition-colors hover:border-primary/40">
               <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.26em] text-primary">
-                Fale conosco
+                Atendimento rápido
               </span>
               <h3 className="mt-5 font-display text-4xl text-foreground">
-                Quer receber mais informacoes?
+                Fale com a equipe e receba orientação para começar
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Use o WhatsApp para tirar duvidas sobre os planos e entender o proximo
-                passo com mais praticidade.
+                Tire dúvidas sobre planos, horários, visita e matrícula com um atendimento
+                próximo, prático e direto no WhatsApp.
               </p>
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href={whatsappDefaultUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-primary px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:opacity-90"
+                >
+                  <MessageCircle size={18} />
+                  Começar pelo WhatsApp
+                </a>
+                <a
+                  href={siteData.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3.5 font-semibold text-foreground transition-all hover:border-primary/40 hover:text-primary"
+                >
+                  Ver Instagram
+                  <ArrowRight size={18} />
+                </a>
+              </div>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-colors hover:border-primary/40">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <MapPin className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <p className="mb-1 text-lg font-semibold text-foreground">Localização</p>
+                    <p className="text-muted-foreground">{siteData.addressLine}</p>
+                    <p className="text-muted-foreground">{siteData.city}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-colors hover:border-primary/40">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Clock3 className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <p className="mb-1 text-lg font-semibold text-foreground">Horários</p>
+                    <p className="text-muted-foreground">Segunda a sexta: 6h às 00h</p>
+                    <p className="text-muted-foreground">Sábado: 8h às 12h e 13h às 17h</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
               <a
-                href={createWhatsAppLink(
-                  "Ola! Quero receber mais informacoes sobre a Academia Audax e os planos disponiveis.",
-                )}
+                href={siteData.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center gap-2 rounded-xl bg-gradient-primary px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:opacity-90"
+                className="group block rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-colors hover:border-primary/40"
               >
-                <MessageCircle size={18} />
-                Falar no WhatsApp
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Instagram className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <p className="mb-1 text-lg font-semibold text-foreground">Instagram</p>
+                    <p className="text-muted-foreground transition-colors group-hover:text-primary">
+                      {siteData.instagramHandle}
+                    </p>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href={whatsappDefaultUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-colors hover:border-primary/40"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                    <Phone className="text-primary" size={22} />
+                  </div>
+                  <div>
+                    <p className="mb-1 text-lg font-semibold text-foreground">WhatsApp</p>
+                    <p className="text-muted-foreground transition-colors group-hover:text-primary">
+                      {siteData.whatsappDisplay}
+                    </p>
+                  </div>
+                </div>
               </a>
             </div>
-
-            <div className="rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-colors hover:border-primary/40">
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                  <MapPin className="text-primary" size={22} />
-                </div>
-                <div>
-                  <p className="mb-1 text-lg font-semibold text-foreground">Localizacao</p>
-                  <p className="text-muted-foreground">{siteData.addressLine}</p>
-                  <p className="text-muted-foreground">{siteData.city}</p>
-                </div>
-              </div>
-            </div>
-
-            <a
-              href={siteData.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-colors hover:border-primary/40"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                  <Instagram className="text-primary" size={22} />
-                </div>
-                <div>
-                  <p className="mb-1 text-lg font-semibold text-foreground">Instagram</p>
-                  <p className="text-muted-foreground transition-colors group-hover:text-primary">
-                    {siteData.instagramHandle}
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <a
-              href={whatsappDefaultUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-colors hover:border-primary/40"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                  <Phone className="text-primary" size={22} />
-                </div>
-                <div>
-                  <p className="mb-1 text-lg font-semibold text-foreground">WhatsApp</p>
-                  <p className="text-muted-foreground transition-colors group-hover:text-primary">
-                    {siteData.whatsappDisplay}
-                  </p>
-                </div>
-              </div>
-            </a>
           </div>
 
           <div
@@ -130,59 +167,41 @@ const ContactSection = () => {
                   Visita guiada
                 </span>
                 <h3 className="mt-5 font-display text-4xl text-foreground md:text-5xl">
-                  Venha ver a Audax
-                  <br />
-                  de perto
+                  Veja a estrutura, tire dúvidas e encontre o plano certo
                 </h3>
                 <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-                  Troquei a foto repetida por um bloco mais util: aqui o visitante ja entende
-                  como nos encontrar, quando visitar e por onde falar com a equipe.
+                  Visitar a Audax é a melhor forma de sentir o ambiente, entender o padrão da
+                  academia e conversar com a equipe antes de tomar sua decisão.
                 </p>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[1.5rem] border border-white/10 bg-background/35 p-5 backdrop-blur-sm">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                      <MapPin size={22} />
+                <div className="mt-8 space-y-4">
+                  {visitBenefits.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-[1.5rem] border border-white/10 bg-background/35 p-5 backdrop-blur-sm"
+                    >
+                      <Check size={18} className="mt-0.5 shrink-0 text-primary" />
+                      <p className="text-sm leading-relaxed text-foreground/85">{item}</p>
                     </div>
-                    <p className="mt-4 text-lg font-semibold text-foreground">Onde estamos</p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {siteData.addressLine}
-                      <br />
-                      {siteData.city}
-                    </p>
-                  </div>
-
-                  <div className="rounded-[1.5rem] border border-white/10 bg-background/35 p-5 backdrop-blur-sm">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                      <Clock3 size={22} />
-                    </div>
-                    <p className="mt-4 text-lg font-semibold text-foreground">Melhor horario</p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      Segunda a sexta das 6h as 00h.
-                      <br />
-                      Sabado das 8h as 12h e 13h as 17h.
-                    </p>
-                  </div>
+                  ))}
                 </div>
 
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <a
-                    href={whatsappDefaultUrl}
+                    href={visitLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-primary px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:opacity-90"
                   >
                     <MessageCircle size={18} />
-                    Agendar atendimento
+                    Agendar uma visita
                   </a>
 
                   <a
-                    href={siteData.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#planos"
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3.5 font-semibold text-foreground transition-all hover:border-primary/40 hover:text-primary"
                   >
-                    Ver Instagram
+                    Ver planos
                     <ArrowRight size={18} />
                   </a>
                 </div>
@@ -192,7 +211,7 @@ const ContactSection = () => {
             <div className="relative h-full min-h-[350px] overflow-hidden rounded-[2rem] border border-border bg-secondary/40">
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/40 to-background" />
               <div className="pointer-events-none absolute left-6 top-6 z-20 rounded-full border border-white/10 bg-background/70 px-4 py-2 text-xs uppercase tracking-[0.26em] text-primary backdrop-blur-md">
-                Mapa e localizacao
+                Mapa e localização
               </div>
               <iframe
                 src={siteData.mapsEmbedUrl}
@@ -203,7 +222,7 @@ const ContactSection = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localizacao Audax Gym"
+                title="Localização Audax Gym"
               />
             </div>
           </div>

@@ -21,18 +21,18 @@ type GalleryItem = {
 
 const structureHighlights: StructureHighlight[] = [
   {
-    title: "Acompanhamento proximo",
-    description: "Espaco para treinar com orientacao, atencao ao movimento e mais confianca.",
+    title: "Atendimento próximo",
+    description: "Uma experiência mais segura para quem quer começar bem e evoluir com constância.",
   },
   {
     title: "Cardio com ritmo",
-    description: "Area pensada para condicionamento e treinos que pedem constancia no dia a dia.",
+    description: "Espaço pensado para manter o condicionamento sem perder conforto e fluidez.",
   },
   {
-    title: "Forca para evoluir",
-    description: "Equipamentos e ambiente preparados para quem quer treinar com seriedade.",
+    title: "Força para evoluir",
+    description: "Ambiente de musculação preparado para treinos sérios e rotina consistente.",
   },
-];
+] as const;
 
 const galleryItems: GalleryItem[] = [
   {
@@ -40,7 +40,7 @@ const galleryItems: GalleryItem[] = [
     alt: "Treino acompanhado na Audax Gym",
     eyebrow: "Acompanhamento",
     title: "Treino com apoio real",
-    description: "Uma rotina mais segura e bem conduzida desde o primeiro treino.",
+    description: "Orientação próxima para você ganhar confiança e treinar melhor desde o início.",
     icon: Users,
     featured: true,
   },
@@ -49,18 +49,18 @@ const galleryItems: GalleryItem[] = [
     alt: "Treino de cardio na Audax Gym",
     eyebrow: "Cardio",
     title: "Energia para manter o ritmo",
-    description: "Espaco para acelerar, ganhar folego e sustentar a consistencia.",
+    description: "Área pensada para acelerar, manter a constância e cuidar do condicionamento.",
     icon: HeartPulse,
   },
   {
     src: gymSquat,
-    alt: "Treino de forca na Audax Gym",
-    eyebrow: "Forca",
-    title: "Estrutura para treinar pesado",
-    description: "Ambiente de musculacao pensado para evolucao progressiva.",
+    alt: "Treino de força na Audax Gym",
+    eyebrow: "Força",
+    title: "Estrutura para treinar sério",
+    description: "Equipamentos e ambiente prontos para quem leva o treino a sério.",
     icon: Dumbbell,
   },
-];
+] as const;
 
 const StructureSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
@@ -74,22 +74,22 @@ const StructureSection = () => {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">
+            <span className="text-primary text-sm font-medium uppercase tracking-[0.3em]">
               Estrutura
             </span>
             <h2 className="mt-3 font-display text-5xl text-foreground md:text-7xl">
-              CONHECA MELHOR
+              CONHEÇA MELHOR
               <br />
               <span className="text-gradient">A ESTRUTURA</span>
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Organizei esta secao para mostrar tres momentos diferentes da Audax sem repetir
-              a mesma imagem: apoio no treino, ritmo no cardio e foco na musculacao.
+              Cada espaço da Audax foi pensado para treino de verdade: ambiente organizado,
+              apoio no início da jornada, área de cardio e musculação para manter o ritmo com mais qualidade.
             </p>
 
             <div className="mt-8 rounded-[2rem] border border-border bg-card/60 p-6 backdrop-blur-xl md:p-8">
               <p className="text-sm font-medium uppercase tracking-[0.28em] text-primary">
-                O que voce encontra aqui
+                O que você encontra aqui
               </p>
               <div className="mt-6 space-y-4">
                 {structureHighlights.map((item, index) => (
