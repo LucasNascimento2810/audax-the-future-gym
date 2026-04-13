@@ -181,7 +181,7 @@ const HeroSection = () => {
       </div>
 
       <a
-        href="#por-que-audax"
+        href="#sobre"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground animate-float"
       >
         <ChevronDown size={28} />

@@ -21,25 +21,25 @@ type GalleryItem =
 
 const images: GalleryItem[] = [
   {
-    alt: "Imagem da Academia Audax",
-    label: "ACADEMIA AUDAX",
-    useFacade: true,
+    src: gymSquat,
+    alt: "Treino de agachamento na Audax Gym",
+    label: "TREINO PESADO",
     featured: true,
   },
   {
-    src: gymSquat,
-    alt: "Ambiente de treino na Audax",
-    label: "AMBIENTE DE TREINO",
+    alt: "Acompanhamento profissional na Audax",
+    label: "ACOMPANHAMENTO",
+    useFacade: true,
   },
   {
     src: gymRunning,
-    alt: "Espaço interno da Audax",
-    label: "ESPAÇO INTERNO",
+    alt: "Estilo de vida ativo Audax",
+    label: "ESTILO DE VIDA",
   },
   {
     src: gymTraining,
-    alt: "Estrutura da Audax",
-    label: "ESTRUTURA AUDAX",
+    alt: "Treino na Audax Gym",
+    label: "NOSSOS ALUNOS",
   },
 ] as const;
 
