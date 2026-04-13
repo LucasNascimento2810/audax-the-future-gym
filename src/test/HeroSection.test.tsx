@@ -1,20 +1,25 @@
-import { render, screen } from '@testing-library/react';
-import HeroSection from '../components/HeroSection';
+import { render, screen } from "@testing-library/react";
+import HeroSection from "../components/HeroSection";
 
-describe('HeroSection', () => {
-  it('renders the main title', () => {
+describe("HeroSection", () => {
+  it("renders the main title", () => {
     render(<HeroSection />);
-    expect(screen.getByText('AUDAX')).toBeInTheDocument();
-    expect(screen.getByText('GYM')).toBeInTheDocument();
+    expect(screen.getByText("AUDAX")).toBeInTheDocument();
+    expect(screen.getByText("GYM")).toBeInTheDocument();
   });
 
-  it('renders the subtitle', () => {
+  it("renders the updated hero copy", () => {
     render(<HeroSection />);
-    expect(screen.getByText('Supere seus limites. Treine com estrutura de alto padrão e acompanhamento profissional.')).toBeInTheDocument();
+    expect(
+      screen.getByText(/Conheça a Academia Audax, veja a estrutura/i),
+    ).toBeInTheDocument();
   });
 
-  it('renders the location badge', () => {
+  it("renders the main CTA buttons", () => {
     render(<HeroSection />);
-    expect(screen.getByText('Cascavel — PR')).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /falar no whatsapp/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /ver planos/i })).toBeInTheDocument();
   });
 });

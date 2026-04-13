@@ -1,103 +1,124 @@
-import { Check, Star } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-const plans = [
-  {
-    name: "MENSAL",
-    price: "189",
-    cents: "90",
-    period: "/mês",
-    features: ["Acesso completo", "Todos os equipamentos", "Vestiário", "Estacionamento"],
-    popular: false,
-  },
-  {
-    name: "TRIMESTRAL",
-    price: "169",
-    cents: "90",
-    period: "/mês",
-    features: ["Tudo do mensal", "Avaliação física", "Ficha de treino", "Desconto exclusivo"],
-    popular: false,
-  },
-  {
-    name: "SEMESTRAL",
-    price: "149",
-    cents: "90",
-    period: "/mês",
-    features: ["Tudo do trimestral", "Acompanhamento", "Acesso prioritário", "Eventos exclusivos"],
-    popular: true,
-  },
-  {
-    name: "ANUAL",
-    price: "129",
-    cents: "90",
-    period: "/mês",
-    features: ["Tudo do semestral", "Melhor custo-benefício", "Personal bônus", "Brinde especial"],
-    popular: false,
-  },
-];
+import { createWhatsAppLink, plans } from "@/lib/siteData";
 
 const PlansSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="planos" className="py-24 md:py-32 relative">
+    <section id="planos" className="relative py-24 md:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Planos</span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-3">
-            CONHEÇA NOSSOS<br />
-            <span className="text-gradient">PLANOS</span>
-          </h2>
+      <div className="container relative z-10 mx-auto px-6" ref={ref}>
+        <div className="mb-16 grid gap-8 xl:grid-cols-[1fr_0.8fr] xl:items-end">
+          <div
+            className={`transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">
+              Planos
+            </span>
+            <h2 className="mt-3 font-display text-5xl text-foreground md:text-7xl">
+              VEJA OS
+              <br />
+              <span className="text-gradient">PLANOS DISPONÍVEIS</span>
+            </h2>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+              Compare as opções com mais clareza e use o WhatsApp para receber mais
+              informações sobre o plano que fizer mais sentido para você.
+            </p>
+          </div>
+
+          <div
+            className={`rounded-[1.75rem] border border-border bg-card/60 p-6 backdrop-blur-xl transition-all duration-700 delay-150 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <p className="text-sm uppercase tracking-[0.26em] text-primary">
+              Atendimento direto
+            </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Para confirmar detalhes e avançar com mais segurança, fale com a equipe
+              pelo WhatsApp em qualquer um dos botões desta seção.
+            </p>
+          </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {plans.map((plan, i) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 group ${
-                plan.popular
-                  ? "bg-card/80 backdrop-blur-xl border-2 border-primary glow-orange"
-                  : "bg-card/60 backdrop-blur-lg border border-border hover:border-primary/40"
-              } ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
-              style={{ transitionDelay: `${300 + i * 150}ms` }}
+              className={`group rounded-[2rem] border border-border bg-card/65 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`}
+              style={{ transitionDelay: `${300 + index * 150}ms` }}
             >
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold tracking-wider flex items-center gap-1">
-                  <Star size={12} /> MAIS POPULAR
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.26em] text-primary">
+                  {plan.durationLabel}
                 </div>
-              )}
-
-              <h3 className="font-display text-2xl text-foreground tracking-wider">{plan.name}</h3>
-
-              <div className="mt-6 mb-8">
-                <span className="text-muted-foreground text-sm">R$</span>
-                <span className="font-display text-6xl text-foreground">{plan.price}</span>
-                <span className="text-primary text-xl font-bold">,{plan.cents}</span>
-                <span className="text-muted-foreground text-sm">{plan.period}</span>
+                <div className="inline-flex rounded-full border border-primary/15 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-primary/90">
+                  {plan.discountLabel}
+                </div>
               </div>
 
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-muted-foreground text-sm">
-                    <Check size={16} className="text-primary flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <h3 className="mt-6 font-display text-3xl tracking-wider text-foreground">
+                {plan.name}
+              </h3>
+
+              <div className="my-8">
+                <span className="text-sm text-muted-foreground">R$ </span>
+                <span className="font-display text-6xl text-foreground">{plan.price}</span>
+                <span className="text-xl font-bold text-primary">,{plan.cents}</span>
+                {plan.period ? (
+                  <span className="text-sm text-muted-foreground">{plan.period}</span>
+                ) : null}
+                <p className="mt-3 text-sm uppercase tracking-[0.24em] text-muted-foreground">
+                  {plan.billingLabel}
+                </p>
+              </div>
+
+              <div className="mb-8 space-y-4">
+                <div className="rounded-2xl border border-white/5 bg-background/45 p-5">
+                  <p className="text-xs uppercase tracking-[0.2em] text-primary">
+                    Formas de pagamento
+                  </p>
+                  <ul className="mt-4 space-y-2">
+                    {plan.paymentOptions.map((option) => (
+                      <li
+                        key={option}
+                        className="text-sm leading-relaxed text-muted-foreground"
+                      >
+                        {option}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Use o WhatsApp para receber mais informações sobre este plano e
+                  confirmar a modalidade de pagamento desejada.
+                </p>
+              </div>
 
               <a
-                href={`https://wa.me/554599000171?text=${encodeURIComponent(`Olá! Tenho interesse no plano *${plan.name}* de R$${plan.price},${plan.cents}/mês da Audax Gym. Gostaria de mais informações!`)}`}
+                href={createWhatsAppLink(
+                  `Olá! Tenho interesse no plano ${plan.name} de R$${plan.price},${plan.cents}${plan.period} da Academia Audax. Gostaria de mais informações sobre as formas de pagamento.`,
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block text-center py-3 rounded-lg font-semibold tracking-wide transition-all ${
-                  plan.popular
-                    ? "bg-gradient-primary text-primary-foreground hover:opacity-90"
-                    : "border border-border text-foreground hover:border-primary hover:text-primary"
-                }`}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-primary py-3.5 font-semibold tracking-wide text-primary-foreground transition-all hover:opacity-90"
               >
-                ESCOLHER
+                <MessageCircle size={18} />
+                Quero saber mais
+              </a>
+
+              <a
+                href="#contato"
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border py-3.5 font-semibold tracking-wide text-foreground transition-all hover:border-primary/40 hover:text-primary"
+              >
+                Ver contato
+                <ArrowRight size={18} />
               </a>
             </div>
           ))}

@@ -59,7 +59,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   html {
@@ -69,7 +69,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Oswald', sans-serif;
   }
 
   .text-gradient {

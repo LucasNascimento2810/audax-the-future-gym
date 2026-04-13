@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const testimonials = [
@@ -22,41 +22,56 @@ const testimonials = [
       "Excelente academia, equipe e atendimento. Ambiente sempre limpo, aparelhos de ponta, variedade, versatilidade e qualidade no treino.",
     rating: 5,
   },
-];
+] as const;
 
 const TestimonialsSection = () => {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section className="py-24 md:py-32 relative">
+    <section id="depoimentos" className="relative py-24 md:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
 
-      <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">Depoimentos</span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-3">
-            O QUE NOSSOS<br />
-            <span className="text-gradient">CLIENTES DIZEM</span>
+      <div className="container relative z-10 mx-auto px-6" ref={ref}>
+        <div
+          className={`mb-16 text-center transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">
+            Depoimentos
+          </span>
+          <h2 className="mt-3 font-display text-5xl text-foreground md:text-7xl">
+            O QUE ESTÃO
+            <br />
+            <span className="text-gradient">DIZENDO SOBRE A AUDAX</span>
           </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+            Alguns relatos já presentes no projeto ajudam a reforçar a experiência de
+            quem treina na academia.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, i) => (
+        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className={`bg-card/60 backdrop-blur-lg border border-border rounded-2xl p-8 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
-              style={{ transitionDelay: `${300 + i * 150}ms` }}
+              className={`rounded-2xl border border-border bg-card/60 p-8 backdrop-blur-lg transition-all duration-500 hover:-translate-y-2 hover:border-primary/40 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              }`}
+              style={{ transitionDelay: `${300 + index * 150}ms` }}
             >
-              <Quote className="text-primary mb-4" size={32} />
-              <p className="text-muted-foreground mb-6 leading-relaxed">"{testimonial.content}"</p>
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, j) => (
-                  <Star key={j} className="text-primary fill-current" size={16} />
+              <Quote className="mb-4 text-primary" size={32} />
+              <p className="mb-6 leading-relaxed text-muted-foreground">
+                "{testimonial.content}"
+              </p>
+              <div className="mb-4 flex items-center gap-1">
+                {[...Array(testimonial.rating)].map((_, starIndex) => (
+                  <Star key={starIndex} className="fill-current text-primary" size={16} />
                 ))}
               </div>
               <div>
                 <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-muted-foreground text-sm">{testimonial.role}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
               </div>
             </div>
           ))}
