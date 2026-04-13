@@ -1,12 +1,12 @@
 import {
   ArrowRight,
+  Clock3,
   Instagram,
   MapPin,
   MessageCircle,
   Phone,
 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import AcademyFacadeImage from "./AcademyFacadeImage";
 import { createWhatsAppLink, siteData, whatsappDefaultUrl } from "@/lib/siteData";
 
 const ContactSection = () => {
@@ -45,15 +45,15 @@ const ContactSection = () => {
                 Fale conosco
               </span>
               <h3 className="mt-5 font-display text-4xl text-foreground">
-                Quer receber mais informações?
+                Quer receber mais informacoes?
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Use o WhatsApp para tirar dúvidas sobre os planos e entender o próximo
+                Use o WhatsApp para tirar duvidas sobre os planos e entender o proximo
                 passo com mais praticidade.
               </p>
               <a
                 href={createWhatsAppLink(
-                  "Olá! Quero receber mais informações sobre a Academia Audax e os planos disponíveis.",
+                  "Ola! Quero receber mais informacoes sobre a Academia Audax e os planos disponiveis.",
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,7 +70,7 @@ const ContactSection = () => {
                   <MapPin className="text-primary" size={22} />
                 </div>
                 <div>
-                  <p className="mb-1 text-lg font-semibold text-foreground">Localização</p>
+                  <p className="mb-1 text-lg font-semibold text-foreground">Localizacao</p>
                   <p className="text-muted-foreground">{siteData.addressLine}</p>
                   <p className="text-muted-foreground">{siteData.city}</p>
                 </div>
@@ -121,28 +121,69 @@ const ContactSection = () => {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
-            <div className="relative min-h-[320px] overflow-hidden rounded-[2rem] border border-border md:min-h-[380px]">
-              <AcademyFacadeImage
-                alt="Imagem da Academia Audax"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/15 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <div className="rounded-[1.5rem] border border-white/10 bg-background/70 p-5 backdrop-blur-xl">
-                  <p className="text-sm uppercase tracking-[0.28em] text-primary">
-                    Academia Audax
-                  </p>
-                  <p className="mt-3 font-display text-xl text-foreground">
-                    {siteData.addressLine}
-                  </p>
+            <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card/70 p-8 md:p-10">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(30_100%_50%_/_0.16),_transparent_40%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
+
+              <div className="relative">
+                <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.26em] text-primary">
+                  Visita guiada
+                </span>
+                <h3 className="mt-5 font-display text-4xl text-foreground md:text-5xl">
+                  Venha ver a Audax
+                  <br />
+                  de perto
+                </h3>
+                <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+                  Troquei a foto repetida por um bloco mais util: aqui o visitante ja entende
+                  como nos encontrar, quando visitar e por onde falar com a equipe.
+                </p>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-[1.5rem] border border-white/10 bg-background/35 p-5 backdrop-blur-sm">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <MapPin size={22} />
+                    </div>
+                    <p className="mt-4 text-lg font-semibold text-foreground">Onde estamos</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {siteData.addressLine}
+                      <br />
+                      {siteData.city}
+                    </p>
+                  </div>
+
+                  <div className="rounded-[1.5rem] border border-white/10 bg-background/35 p-5 backdrop-blur-sm">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <Clock3 size={22} />
+                    </div>
+                    <p className="mt-4 text-lg font-semibold text-foreground">Melhor horario</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      Segunda a sexta das 6h as 00h.
+                      <br />
+                      Sabado das 8h as 12h e 13h as 17h.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <a
                     href={whatsappDefaultUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-primary px-6 py-3.5 font-semibold text-primary-foreground transition-all hover:opacity-90"
                   >
-                    Chamar no WhatsApp
-                    <ArrowRight size={16} />
+                    <MessageCircle size={18} />
+                    Agendar atendimento
+                  </a>
+
+                  <a
+                    href={siteData.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3.5 font-semibold text-foreground transition-all hover:border-primary/40 hover:text-primary"
+                  >
+                    Ver Instagram
+                    <ArrowRight size={18} />
                   </a>
                 </div>
               </div>
@@ -151,7 +192,7 @@ const ContactSection = () => {
             <div className="relative h-full min-h-[350px] overflow-hidden rounded-[2rem] border border-border bg-secondary/40">
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/40 to-background" />
               <div className="pointer-events-none absolute left-6 top-6 z-20 rounded-full border border-white/10 bg-background/70 px-4 py-2 text-xs uppercase tracking-[0.26em] text-primary backdrop-blur-md">
-                Mapa e localização
+                Mapa e localizacao
               </div>
               <iframe
                 src={siteData.mapsEmbedUrl}
@@ -162,7 +203,7 @@ const ContactSection = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localização Audax Gym"
+                title="Localizacao Audax Gym"
               />
             </div>
           </div>

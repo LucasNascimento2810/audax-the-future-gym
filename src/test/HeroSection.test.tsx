@@ -11,7 +11,7 @@ describe("HeroSection", () => {
   it("renders the updated hero copy", () => {
     render(<HeroSection />);
     expect(
-      screen.getByText(/Conheça a Academia Audax, veja a estrutura/i),
+      screen.getByText(/Conheca a Academia Audax, veja a estrutura/i),
     ).toBeInTheDocument();
   });
 

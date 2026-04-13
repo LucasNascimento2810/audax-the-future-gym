@@ -1,18 +1,18 @@
 import { Clock3, Instagram, MapPin, MessageCircle } from "lucide-react";
-import gymTraining from "@/assets/optimized/gym-training.jpg";
+import heroBg from "@/assets/optimized/hero-bg.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { createWhatsAppLink, siteData } from "@/lib/siteData";
 
 const highlights = [
   {
     icon: MapPin,
-    title: "Endereço",
-    description: `${siteData.addressLine} • ${siteData.city}`,
+    title: "Endereco",
+    description: `${siteData.addressLine} - ${siteData.city}`,
   },
   {
     icon: Clock3,
-    title: "Horários",
-    description: "Segunda a sexta das 6h às 00h e sábado das 8h às 12h e 13h às 17h.",
+    title: "Horarios",
+    description: "Segunda a sexta das 6h as 00h e sabado das 8h as 12h e 13h as 17h.",
   },
   {
     icon: Instagram,
@@ -25,7 +25,7 @@ const AboutSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
   return (
-    <section id="sobre" className="py-24 md:py-32 relative">
+    <section id="sobre" className="relative py-24 md:py-32">
       <div className="container mx-auto px-6" ref={ref}>
         <div className="grid items-center gap-16 lg:grid-cols-[1.02fr_0.98fr]">
           <div
@@ -36,19 +36,19 @@ const AboutSection = () => {
             <span className="text-primary text-sm tracking-[0.3em] uppercase font-medium">
               Sobre a academia
             </span>
-            <h2 className="mt-3 mb-6 font-display text-5xl text-foreground md:text-6xl">
-              UMA VISÃO MAIS CLARA
+            <h2 className="mb-6 mt-3 font-display text-5xl text-foreground md:text-6xl">
+              UMA VISAO MAIS CLARA
               <br />
               <span className="text-gradient">DA AUDAX</span>
             </h2>
             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              A Academia Audax é referência em Cascavel - PR, oferecendo um espaço
+              A Academia Audax e referencia em Cascavel - PR, oferecendo um espaco
               moderno e completo para quem busca qualidade de vida e resultados reais
               nos treinos.
             </p>
             <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
               Com equipamentos de ponta, profissionais qualificados e um ambiente
-              motivador, a Audax é o lugar certo para transformar seus objetivos em conquistas.
+              motivador, a Audax e o lugar certo para transformar seus objetivos em conquistas.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3">
@@ -77,7 +77,7 @@ const AboutSection = () => {
               </a>
               <a
                 href={createWhatsAppLink(
-                  "Olá! Quero conhecer melhor a Academia Audax e tirar dúvidas sobre os planos.",
+                  "Ola! Quero conhecer melhor a Academia Audax e tirar duvidas sobre os planos.",
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -96,21 +96,19 @@ const AboutSection = () => {
           >
             <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent blur-2xl" />
             <img
-              src={gymTraining}
-              alt="Treino na Audax Gym"
+              src={heroBg}
+              alt="Interior da Audax Gym"
               className="relative h-[360px] w-full rounded-[2rem] object-cover shadow-2xl md:h-[520px]"
             />
             <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-t from-background via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-primary/20 bg-card/80 p-6 shadow-xl backdrop-blur-xl">
-              <p className="text-sm uppercase tracking-[0.28em] text-primary">
-                Próximo passo
-              </p>
+              <p className="text-sm uppercase tracking-[0.28em] text-primary">Ambiente Audax</p>
               <p className="mt-3 font-display text-3xl text-foreground">
-                   Seu próximo treino começa aqui
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Venha conhecer a estrutura pessoalmente e descubra por que a Audax
-                  é a escolha de quem leva o treino a sério.
+                Seu proximo treino comeca aqui
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Venha conhecer a estrutura pessoalmente e descubra por que a Audax
+                e a escolha de quem leva o treino a serio.
               </p>
             </div>
           </div>
