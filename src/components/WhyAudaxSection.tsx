@@ -6,25 +6,25 @@ const reasons = [
     icon: Building2,
     title: "Estrutura moderna",
     description:
-      "A apresentação da academia destaca um espaço com visual forte, profissional e pensado para transmitir confiança.",
+      "Espaço amplo, bem iluminado e com equipamentos de última geração para você treinar com conforto e segurança.",
   },
   {
     icon: Dumbbell,
     title: "Ambiente pensado para treino",
     description:
-      "Os registros da academia ajudam a entender melhor o ambiente e a estrutura antes mesmo do primeiro contato.",
+      "Cada detalhe foi planejado para oferecer a melhor experiência de treino, do layout ao ar-condicionado.",
   },
   {
     icon: WalletCards,
     title: "Planos para diferentes objetivos",
     description:
-      "Os planos mensal, trimestral, semestral e anual aparecem com mais clareza para facilitar sua comparação.",
+      "Opções mensal, trimestral, semestral e anual para você escolher o que melhor se encaixa na sua rotina e no seu bolso.",
   },
   {
     icon: MessageCircleMore,
-    title: "Atendimento facilitado pelo WhatsApp",
+    title: "Atendimento rápido pelo WhatsApp",
     description:
-      "Os principais pontos da página levam direto para o WhatsApp, tornando o próximo passo mais simples.",
+      "Tire suas dúvidas, conheça os planos e matricule-se de forma prática direto pelo WhatsApp.",
   },
 ] as const;
 
@@ -50,8 +50,8 @@ const WhyAudaxSection = () => {
             <span className="text-gradient">CONHECER A ACADEMIA</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mt-6">
-            Uma apresentação mais objetiva da Audax para quem quer conhecer a estrutura,
-            comparar os planos e falar com a equipe pelo WhatsApp.
+            Tudo o que você precisa para alcançar seus resultados está aqui:
+            estrutura completa, equipe qualificada e planos acessíveis.
           </p>
         </div>
 

@@ -29,8 +29,8 @@ const ContactSection = () => {
             <span className="text-gradient">ACADEMIA AUDAX</span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            WhatsApp, Instagram, localização e mapa organizados em um só lugar para
-            deixar o contato mais claro e confiável.
+            Entre em contato pelo WhatsApp, siga nosso Instagram ou visite
+            a academia pessoalmente. Estamos prontos para te receber!
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const ContactSection = () => {
           >
             <div className="rounded-[2rem] border border-border bg-card/70 p-8 backdrop-blur-xl transition-colors hover:border-primary/40">
               <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.26em] text-primary">
-                Conversão via WhatsApp
+                Fale conosco
               </span>
               <h3 className="mt-5 font-display text-4xl text-foreground">
                 Quer receber mais informações?
